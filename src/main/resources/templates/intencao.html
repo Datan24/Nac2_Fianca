@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Home</title>
+<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet" />
+<link th:href="@{/webjars/bootstrap/css/bootstraptheme.min.css}"
+	rel="stylesheet" />
+
+<style>
+.logo-container {
+	background-color: #FC7979;
+	color: #000000;
+}
+</style>
+
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="w-auto p-3 mt-3 logo-container">Intenções de
+			Financiamento</div>
+		<br>
+		<form method="POST" th:object="${intencao}"
+			th:action="@{/salvar-intencao}">
+
+			<div class="form-row">
+
+				<div>
+					<input type="hidden" th:field="*{id}">
+				</div>
+
+				<div class="form-group col-md-6 mt-3">
+					<label for="nome">Cliente:</label> <input required="required"
+						type="text" class="form-control" placeholder="Nome do Cliente"
+						th:field="*{nomeCliente}">
+				</div>
+
+				<div class="form-group col-md-6 mt-3">
+					<label for="nome">Endereço:</label> <input required="required"
+						type="text" class="form-control" th:field="*{endereco}">
+				</div>
+
+				<div class="form-group col-md-6 mt-3">
+					<label for="nome">Nº:</label> <input required="required"
+						type="text" class="form-control" th:field="*{numero}">
+				</div>
+
+				<div class="form-group col-md-6 mt-3">
+					<label for="nome">Cidade:</label> <input required="required"
+						type="text" class="form-control" th:field="*{cidade}">
+				</div>
+
+				<div class="form-group col-md-6 mt-3">
+					<label for="nome">Estado:</label> <input required="required"
+						type="text" class="form-control" th:field="*{estado}">
+				</div>
+
+				<div class="form-group col-md-6 mt-3">
+					<label for="nome">CEP:</label> <input required="required"
+						type="text" class="form-control" th:field="*{cep}">
+				</div>
+
+				<div class="form-group col-md-6 mt-3">
+					<label for="nome">CPF:</label> <input required="required"
+						type="text" class="form-control" th:field="*{cpf}">
+				</div>
+
+				<div class="form-group col-md-6 mt-3">
+					<label for="nome">RG:</label> <input required="required"
+						type="text" class="form-control" th:field="*{RG}">
+				</div>
+
+				<div class="form-group col-md-6 mt-3">
+					<label for="nome">Data nascimento:</label> <input
+						required="required" type="text" class="form-control"
+						th:field="*{nascimento}">
+				</div>
+
+				<div class="form-group col-md-6 mt-3">
+					<label for="nome">E-mail:</label> <input required="required"
+						type="text" class="form-control" th:field="*{email}">
+				</div>
+
+				<div class="form-group col-md-6 mt-3">
+					<label for="nome">Telefone residêncial:</label> <input
+						required="required" type="text" class="form-control"
+						th:field="*{telefoneResidencial}">
+				</div>
+
+				<div class="form-group col-md-6 mt-3">
+					<label for="nome">Celular:</label> <input required="required"
+						type="text" class="form-control" th:field="*{celular}">
+				</div>
+
+				<div class="form-group col-md-6 mt-3">
+					<label for="nome">Tipo financiamento:</label> <input
+						required="required" type="text" class="form-control"
+						th:field="*{tipoFinanciamento}">
+				</div>
+
+				<div class="form-group col-md-6 mt-3">
+					<label for="nome">Quantidade parcelamento:</label> <input
+						required="required" type="text" class="form-control"
+						th:field="*{quantidadeParcelas}">
+				</div>
+
+				<div class="form-group col-md-6 mt-3">
+					<label for="nome">Valor intenção:</label> <input
+						required="required" type="text" class="form-control"
+						th:field="*{valorIntencao}">
+				</div>
+
+				<div class="form-group col-md-6 mt-3">
+					<label for="nome">Salário:</label> <input required="required"
+						type="text" class="form-control" th:field="*{salario}">
+				</div>
+
+			</div>
+
+			<div>
+				<button type="submit" class="btn btn-light">Salvar</button>
+			</div>
+		</form>
+		<br>
+
+
+
+	</div>
+
+	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>

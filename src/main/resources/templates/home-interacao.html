@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"xmlns:th="http://www.thymeleaf.org">
+	
+  <head>
+ 	<meta charset="UTF-8" />
+ 	<meta name="viewport" content="width=device-width" />
+ 	<title>Home</title>
+ 	<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"rel="stylesheet" />
+	<link th:href="@{/webjars/bootstrap/css/bootstraptheme.min.css}"rel="stylesheet" />
+	
+	<style>
+		.logo-container{
+			background-color:#00BFFF;
+			color:#000000;
+		}
+	</style>
+	
+  </head>
+  
+   <body>
+   		
+    	<div class="container" >
+    	
+    		<div class="w-auto p-3 mt-3 logo-container">Intenções de Financiamento</div>
+				<br>
+				<form th:action="@{/nova-intencao}">
+					<div>
+						<button type="submit" class="btn btn-light">Nova Intenção</button>
+					</div>
+				</form>
+    			<br>
+    			  			
+   		 <table class="table" >
+			<thead>
+				<tr>
+					<th scope="col">Cliente</th>
+					<th class="text-center" scope="col">Tipo finaciamento</th>
+					<th class="text-center" scope="col">Valor intenção</th>
+					<th class="text-center" scope="col">Quantidade parcelamento</th>
+				</tr>
+			</thead>
+				<tbody>
+						<tr th:each="intencao : ${intencoes}">
+						<td th:text="${intencao.nomeCliente}"></td>
+						<td class="text-center">
+						<a th:href="@{/intencao/{id}(id = ${intencao.id})}" class="btn btn-primary">Detalhar</a>
+						</td>
+						</tr>
+				</tbody>
+		</table>
+    			
+    		
+    			
+		</div>
+		
+	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+   </body>
+</html>
